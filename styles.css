@@ -1,0 +1,22 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #111; color: #e6e6e6; }
+#app { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.sidebar { padding: 16px; border-right: 1px solid #2a2a2a; background: #181818; }
+h1 { font-size: 18px; }
+nav button, .mode-switch button, #analyzeBtn { width: 100%; margin: 6px 0; background: #232323; color: #ddd; border: 1px solid #3a3a3a; border-radius: 8px; padding: 10px; cursor: pointer; }
+button.active { background: #3256ff; border-color: #3256ff; }
+main { padding: 16px; }
+.tab { display: none; }
+.tab.active { display: block; }
+.upload-row { display: grid; grid-template-columns: 1fr 1fr 160px; gap: 10px; align-items: end; }
+label { display: block; font-size: 13px; color: #aaa; }
+input[type="file"], input[type="text"], input:not([type]) { width: 100%; margin-top: 6px; background: #1f1f1f; color: #ddd; border: 1px solid #333; border-radius: 8px; padding: 8px; }
+.compare-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.image-pane { background: #171717; padding: 10px; border-radius: 12px; border: 1px solid #2f2f2f; }
+img { width: 100%; min-height: 280px; object-fit: contain; background: #0c0c0c; border-radius: 8px; }
+#histogram { width: 100%; background: #171717; border: 1px solid #2f2f2f; border-radius: 8px; }
+.card { background: #171717; border: 1px solid #2f2f2f; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+dialog { border: 1px solid #333; border-radius: 12px; background: #141414; color: #eee; width: min(720px, 95vw); }
+#onboardingForm { display: grid; gap: 10px; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
