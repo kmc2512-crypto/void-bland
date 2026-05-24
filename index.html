@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Mentor AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <h1>Photo Mentor AI</h1>
+      <div class="mode-switch">
+        <button id="standardMode" class="active">Standard</button>
+        <button id="proMode">Pro</button>
+      </div>
+      <nav id="tabs">
+        <button data-tab="compare" class="active">Compare</button>
+        <button data-tab="analyze">Analyze</button>
+        <button data-tab="advice">Advice</button>
+        <button data-tab="calendar">Calendar</button>
+        <button data-tab="profile">Profile</button>
+      </nav>
+    </aside>
+
+    <main>
+      <section id="compare" class="tab active">
+        <div class="upload-row">
+          <label>元画像<input type="file" id="originalInput" accept="image/*" /></label>
+          <label>編集後画像<input type="file" id="editedInput" accept="image/*" /></label>
+          <button id="analyzeBtn">AI解析</button>
+        </div>
+        <div class="compare-wrap">
+          <div class="image-pane"><h3>Before</h3><img id="originalPreview" /></div>
+          <div class="image-pane"><h3>After</h3><img id="editedPreview" /></div>
+        </div>
+        <label>比較スライダー<input type="range" min="0" max="100" value="50" id="compareSlider" /></label>
+        <canvas id="histogram" width="900" height="160"></canvas>
+      </section>
+
+      <section id="analyze" class="tab"></section>
+      <section id="advice" class="tab"></section>
+      <section id="calendar" class="tab"></section>
+      <section id="profile" class="tab"></section>
+    </main>
+  </div>
+
+  <dialog id="onboardingDialog">
+    <form method="dialog" id="onboardingForm">
+      <h2>初回セットアップ</h2>
+      <label>カメラ機種<input name="camera" required /></label>
+      <label>レンズ<input name="lens" required /></label>
+      <label>編集ソフト<input name="software" required /></label>
+      <label>普段撮るジャンル<input name="genres" placeholder="ポートレート, スナップ" required /></label>
+      <label>編集の好み<input name="style" placeholder="透明感, フィルム風" required /></label>
+      <label>困っていること<input name="pain" placeholder="白飛び, 肌色" required /></label>
+      <button>保存して開始</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
